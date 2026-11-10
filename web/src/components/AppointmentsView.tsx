@@ -8,7 +8,7 @@ import { Appointment, Service, User, AvailabilityResponse } from '../types';
 import { getTodayStr } from '../utils/date';
 import './AppointmentsView.scss';
 // NOVO: estilo da grade de horários da admin (arquivo separado, não precisa mexer no AppointmentsView.scss)
-import './AdminSlots.scss';
+import './Adminslots.scss';
 
 interface AppointmentsViewProps {
   user: User | null;

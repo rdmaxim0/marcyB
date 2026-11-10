@@ -22,7 +22,7 @@ export interface NotificationPayload {
 // 2. Função que gera o link do WhatsApp para a cliente finalizar o sinal de 50% com a Marcy
 export function generateAdminWhatsAppMessage(data: NotificationPayload): string {
   // Lê o número do WhatsApp da Marcy do arquivo .env (ou usa o padrão caso não exista)
-  const adminPhone = process.env.ADMIN_WHATSAPP || '5521999999999';
+  const adminPhone = process.env.ADMIN_WHATSAPP || '5521983741833';
 
   // Monta a mensagem formatada para o WhatsApp (*texto* deixa em negrito no WhatsApp)
   const message = `⏳ *SOLICITAÇÃO DE AGENDAMENTO — MARCYB.*
