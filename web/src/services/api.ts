@@ -8,7 +8,7 @@ export const api = axios.create({
     // Define o prefixo automático de todas as chamadas.
     // Ex: quando fizermos api.get('/catalog'), ele vai chamar '/api/catalog',
     // que o nosso Proxy do Vite redireciona para 'http://localhost:3333/api/catalog'.
-    baseURL: '/api'
+    baseURL: import.meta.env.VITE_API_URL || 'https://marcyb.onrender.com/api',
 })
 
 api.interceptors.request.use((config) => {
