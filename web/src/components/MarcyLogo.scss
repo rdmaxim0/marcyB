@@ -1,0 +1,41 @@
+@use '../styles/variables' as *;
+
+.marcy-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  user-select: none;
+
+  .letterB {
+    padding-left: 5px;
+  }
+
+  &__badge {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1.5px solid rgba(246, 243, 221, 0.22);
+  }
+
+  &__wordmark {
+    display: inline-flex;
+    align-items: baseline;
+    font-family: $font-display;
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: -0.04em;
+    color: $color-cream;
+  }
+
+  &__inline-y {
+    display: inline-block;
+    transform: translateY(3px);
+    margin: 0 -1px;
+  }
+
+  &__dot {
+    color: $color-crimson-glow;
+  }
+}

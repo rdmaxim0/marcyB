@@ -1,0 +1,147 @@
+@use '../styles/variables' as *;
+
+.appointments-view {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.manual-booking-form {
+  background-color: $color-cream-soft;
+  border: 1px solid $color-sand;
+  border-radius: $radius-lg;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  .field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    label {
+      font-size: 11px;
+      font-weight: 700;
+      color: $color-charcoal;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid $color-sand;
+      border-radius: $radius-md;
+      background-color: $color-white;
+      font-size: 13px;
+      color: $color-charcoal;
+      outline: none;
+
+      &:focus {
+        border-color: $color-crimson;
+      }
+    }
+  }
+
+  .row-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .checkbox-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: $color-charcoal;
+    cursor: pointer;
+    padding: 4px 0;
+
+    input {
+      accent-color: $color-crimson;
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .submit-btn {
+    margin-top: 6px;
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: $radius-md;
+    background-color: $color-crimson;
+    color: $color-cream;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    &:hover {
+      background-color: $color-crimson-dark;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.appointment-card {
+  background-color: $color-cream-soft;
+  border: 1px solid $color-sand;
+  border-left: 4px solid $color-crimson;
+  border-radius: $radius-lg;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h4 {
+      font-size: 15px;
+      color: $color-charcoal;
+    }
+  }
+
+  &__badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 99px;
+
+    &--PENDING_APPROVAL {
+      background-color: $color-crimson-bg;
+      color: $color-crimson;
+    }
+
+    &--CONFIRMED {
+      background-color: $color-olive;
+      color: $color-cream;
+    }
+
+    &--CANCELLED {
+      background-color: #fce8e6;
+      color: #c5221f;
+    }
+  }
+
+  &__meta {
+    font-size: 12px;
+    color: $color-muted;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+}

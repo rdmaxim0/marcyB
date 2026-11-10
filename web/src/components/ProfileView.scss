@@ -1,0 +1,177 @@
+@use '../styles/variables' as *;
+
+.profile-view {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.profile-card {
+  background-color: $color-cream-soft;
+  border: 1px solid $color-sand;
+  border-radius: $radius-lg;
+  padding: 24px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+
+  &__avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: $color-crimson;
+    color: $color-cream;
+    font-family: $font-display;
+    font-size: 24px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4px;
+  }
+
+  h3 {
+    font-size: 18px;
+    color: $color-black;
+  }
+
+  p {
+    font-size: 13px;
+    color: $color-muted;
+  }
+
+  span {
+    font-size: 12px;
+    font-weight: 600;
+    color: $color-charcoal;
+  }
+
+  &__admin-btn {
+    margin-top: 12px;
+    width: 100%;
+    padding: 12px;
+    border-radius: $radius-md;
+    border: none;
+    background-color: $color-olive;
+    color: $color-cream;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  &__logout-btn {
+    margin-top: 6px;
+    width: 100%;
+    padding: 11px;
+    border-radius: $radius-md;
+    border: 1px solid $color-sand;
+    background-color: transparent;
+    color: $color-crimson;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+}
+
+.auth-card {
+  background-color: $color-cream-soft;
+  border: 1px solid $color-sand;
+  border-radius: $radius-lg;
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__submit {
+    margin-top: 4px;
+    width: 100%;
+    min-height: 46px;
+    padding: 12px;
+    border: none;
+    border-radius: $radius-md;
+    background-color: $color-crimson;
+    color: $color-cream;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+
+    &:hover:not(:disabled) {
+      background-color: $color-crimson-dark;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.auth-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: $color-cream;
+  padding: 4px;
+  border-radius: $radius-md;
+  border: 1px solid $color-sand;
+
+  &__btn {
+    padding: 9px;
+    border: none;
+    border-radius: 9px;
+    background: transparent;
+    color: $color-muted;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+
+    &--active {
+      background-color: $color-crimson;
+      color: $color-cream;
+    }
+  }
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.auth-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: $color-charcoal;
+  }
+
+  input {
+    width: 100%;
+    padding: 11px 12px;
+    border-radius: $radius-md;
+    border: 1px solid $color-sand;
+    background-color: $color-white;
+    color: $color-black;
+    font-size: 13px;
+    outline: none;
+
+    &:focus {
+      border-color: $color-crimson;
+    }
+  }
+}

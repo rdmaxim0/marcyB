@@ -1,0 +1,85 @@
+@use '../styles/variables' as *;
+
+// Estilo ÚNICO do card de serviço (Home e lista de Serviços).
+// Este bloco veio do ServicesView.scss e já inclui o tamanho da foto
+// (antes estava no ServiceCardImage.scss, que não é mais necessário).
+.service-card {
+  display: flex;
+  gap: 14px;
+  padding: 14px;
+  background-color: $color-cream-soft;
+  border-left: 5px solid $color-crimson;
+  border-radius: $radius-md;
+  align-items: center;
+
+  img {
+    // Foto ocupa 15% da largura do card, com limite de 120px.
+    // Para uma foto maior, aumente os dois valores (ex.: 30% e 150px).
+    flex: 0 0 15%;
+    max-width: 120px;
+
+    // Formato retrato (4:5): a altura é calculada pela largura, então a foto nunca distorce
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+
+    border-radius: $radius-sm;
+    object-fit: cover;
+  }
+
+  &__info {
+    flex: 1;
+    min-width: 0; // permite o texto encolher/quebrar em vez de empurrar o card para fora
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    h3 {
+      font-size: 16px;
+      color: $color-black;
+    }
+
+    p {
+      font-size: 12px;
+      color: $color-muted;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px; // NOVO: espaço fixo entre o preço e o botão (antes eles chegavam a encostar)
+    margin-top: 6px;
+
+    strong {
+      font-size: 13px;
+      line-height: 1.25; // se o preço quebrar em duas linhas, elas ficam bem juntas
+      color: $color-crimson-dark;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+    }
+
+    button {
+      flex-shrink: 0; // NOVO: o botão nunca é espremido; quem cede espaço é o preço
+      white-space: nowrap;
+      min-height: 36px;
+      padding: 7px 14px;
+      border-radius: $radius-sm;
+      border: none;
+      background-color: $color-crimson;
+      color: $color-cream;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $color-crimson-dark;
+      }
+    }
+  }
+}

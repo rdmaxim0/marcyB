@@ -1,0 +1,195 @@
+@use '../styles/variables' as *;
+
+.home-view {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &__section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 12px;
+
+    h2 {
+      font-size: 20px;
+      color: $color-black;
+    }
+
+    button {
+      background: transparent;
+      border: none;
+      color: $color-crimson;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+  }
+}
+
+.hero-editorial {
+  background-color: $color-black;
+  color: $color-cream;
+  border-radius: $radius-lg;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 4px solid $color-crimson;
+
+  // Marca d'água vetorial do .y no fundo do Hero (Cor Verde Oliva aplicada diretamente aqui)
+  &__watermark {
+    position: absolute;
+    right: -18px;
+    bottom: -24px;
+    width: 170px;
+    height: 170px;
+    opacity: 0.15;
+    pointer-events: none;
+
+    path, circle {
+      fill: $color-olive !important;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  &__location {
+    font-size: 11px;
+    font-weight: 600;
+    color: $color-sand;
+    letter-spacing: 0.02em;
+  }
+
+  h1 {
+    font-size: 28px;
+    line-height: 1.04;
+    color: $color-cream;
+    max-width: 16ch;
+  }
+
+  &__manifesto {
+    font-size: 13px;
+    color: $color-cream;
+    opacity: 0.9;
+    line-height: 1.5;
+    padding-left: 12px;
+    border-left: 3px solid $color-crimson;
+  }
+
+  &__idv-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    padding-top: 2px;
+
+    span {
+      font-family: $font-display;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      padding: 4px 9px;
+      border-radius: 6px;
+      background-color: rgba(246, 243, 221, 0.08);
+      color: $color-cream;
+    }
+
+    .tag-olive {
+      background-color: $color-olive;
+      color: $color-cream;
+    }
+  }
+
+  &__cta {
+    margin-top: 4px;
+    min-height: 48px;
+    padding: 14px 18px;
+    border-radius: $radius-md;
+    border: none;
+    background-color: $color-crimson;
+    color: $color-cream;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.15s ease, background-color 0.2s ease;
+
+    &:hover {
+      background-color: $color-crimson-dark;
+      transform: translateY(-1px);
+    }
+  }
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 5px 11px;
+  border-radius: 99px;
+
+  &__dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+  }
+
+  &--open {
+    background-color: $color-olive;
+    color: $color-cream;
+
+    .status-pill__dot {
+      background-color: #a7f3d0;
+    }
+  }
+
+  &--closed {
+    background-color: $color-crimson-dark;
+    color: $color-cream;
+
+    .status-pill__dot {
+      background-color: #fca5a5;
+    }
+  }
+}
+
+.studio-metrics {
+  background-color: $color-crimson-dark;
+  color: $color-cream;
+  border-radius: $radius-lg;
+  padding: 16px 14px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  text-align: center;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    strong {
+      font-size: 16px;
+      color: $color-cream;
+      font-family: $font-display;
+      font-variant-numeric: tabular-nums;
+    }
+
+    span {
+      font-size: 11px;
+      color: rgba(246, 243, 221, 0.82);
+    }
+  }
+}

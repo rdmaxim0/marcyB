@@ -1,0 +1,103 @@
+@use '../styles/variables' as *;
+
+// Aliases de compatibilidade automática para todos os componentes
+$color-rose: $color-crimson;
+$color-rose-dark: $color-crimson-dark;
+$color-rose-bg: $color-crimson-bg;
+
+.admin-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    background-color: $color-cream-soft;
+    padding: 6px;
+    border-radius: $radius-md;
+    border: 1px solid $color-sand;
+
+    button {
+      padding: 8px 6px;
+      border: none;
+      border-radius: $radius-sm;
+      background: transparent;
+      font-size: 11px;
+      font-weight: 600;
+      color: $color-muted;
+      cursor: pointer;
+
+      &.active {
+        background-color: $color-rose;
+        color: $color-cream;
+      }
+    }
+  }
+
+  &__form {
+    background-color: $color-cream-soft;
+    border: 1px solid $color-sand;
+    border-radius: $radius-lg;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    h3 {
+      font-size: 15px;
+      color: $color-charcoal;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 9px 11px;
+      border-radius: $radius-sm;
+      border: 1px solid $color-sand;
+      background-color: $color-white;
+      font-size: 12px;
+    }
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 6px;
+    margin-top: 6px;
+
+    button {
+      flex: 1;
+      padding: 7px 10px;
+      border: none;
+      border-radius: $radius-sm;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+  }
+}
+
+.btn-confirm {
+  background-color: $color-olive;
+  color: $color-cream;
+}
+
+.btn-cancel {
+  background-color: #fce8e6;
+  color: #c5221f;
+}
+
+.btn-edit {
+  background-color: $color-sand;
+  color: $color-charcoal;
+}

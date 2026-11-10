@@ -1,0 +1,33 @@
+@use './variables' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $color-black;
+  color: $color-charcoal;
+  font-family: $font-sans;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: $font-display;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+button, input, select, textarea {
+  font-family: $font-sans;
+}
+
+// Garante alinhamento numérico perfeito em preços e horários
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}

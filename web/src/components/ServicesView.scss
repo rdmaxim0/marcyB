@@ -1,0 +1,65 @@
+@use '../styles/variables' as *;
+
+.services-view {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: $color-cream-soft;
+  border: 1.5px solid $color-sand;
+  border-radius: $radius-md;
+  padding: 12px 14px;
+  color: $color-muted;
+
+  &:focus-within {
+    border-color: $color-crimson;
+  }
+
+  input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+    background: transparent;
+    color: $color-black;
+  }
+}
+
+.category-pills {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+
+  &__btn {
+    white-space: nowrap;
+    min-height: 38px;
+    padding: 8px 16px;
+    border-radius: 99px;
+    border: none;
+    background-color: $color-sand;
+    font-size: 12px;
+    font-weight: 600;
+    color: $color-charcoal;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    &--active {
+      background-color: $color-crimson;
+      color: $color-cream;
+    }
+  }
+}
+
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+// O estilo do card de serviço (.service-card) agora fica em ServiceCard.scss

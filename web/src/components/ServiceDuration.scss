@@ -1,0 +1,14 @@
+// Selo de tempo estimado exibido nos cards de serviço (ícone de relógio + texto)
+.service-duration {
+  display: inline-flex;       // ícone e texto lado a lado
+  align-items: center;        // alinhados na vertical
+  gap: 6px;                   // espaço entre o ícone e o texto
+  margin: 2px 0 10px;         // respiro entre a descrição e o rodapé do card
+  font-size: 12px;
+  font-weight: 600;
+  color: #655f56;             // tom neutro, igual aos textos de apoio do app
+
+  svg {
+    flex-shrink: 0;           // impede o ícone de encolher em telas estreitas
+  }
+}

@@ -1,0 +1,36 @@
+// ============================================================================
+// DESIGN TOKENS MARCYB. — EDITORIAL CRIMSON & IDV OFICIAL
+// ============================================================================
+
+// 1. Base IDV (Extraída do PDF MARCY BRAIDS)
+$color-black: #0f0e0c;        // Preto ébano profundo do logo .y
+$color-charcoal: #181514;     // Superfície escura com subtom quente
+$color-cream: #f6f3dd;        // Creme marfim oficial do manual da marca
+$color-cream-soft: #fcfaf0;   // Superfície elevada clara
+$color-sand: #e5dec3;         // Tom de degrau de superfície (sem linhas duras)
+
+// 2. Tons de Vermelho (Destaque Feminino, Urbano e Poderoso)
+$color-crimson: #9e1b20;      // Vermelho Carmim principal (CTAs, Destaques, Ponto MarcyB.)
+$color-crimson-dark: #6b0f14; // Rubi profundo / Vinho (Hover e superfícies de impacto)
+$color-crimson-glow: #c8232c; // Vermelho vivo para indicadores ativos
+$color-crimson-bg: #f9e6e6;   // Fundo rosado/rubi suave para alertas e regras
+
+// 3. Verde Oliva Oficial da IDV ("Aa" do PDF)
+$color-olive: #5b6236;        // Oliva identidade (selos secundários, status confirmado)
+$color-olive-dark: #424825;   // Oliva escuro
+$color-olive-soft: #e6e8d5;   // Fundo oliva claro
+
+// 4. Tipografia e Neutros
+$color-muted: #655f56;        // Texto de apoio com contraste acessível (> 4.5:1)
+$color-white: #ffffff;
+
+// 5. Fontes (Neue Power Ultra fallback Syne + Poppins da IDV)
+$font-display: 'Neue Power', 'Syne', sans-serif;
+$font-sans: 'Poppins', sans-serif;
+
+// 6. Dimensões e Ritmo
+$app-max-width: 430px;
+$radius-sm: 8px;
+$radius-md: 14px;
+$radius-lg: 20px;
+$radius-xl: 28px;

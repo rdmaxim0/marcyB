@@ -1,0 +1,68 @@
+@use './styles/variables' as *;
+
+.app-wrapper {
+  min-height: 100vh;
+  background-color: $color-black;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  @media (min-width: 480px) {
+    padding: 24px 16px;
+  }
+}
+
+.app-shell {
+  width: 100%;
+  max-width: $app-max-width;
+  min-height: 100vh;
+  background-color: $color-cream;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+
+  @media (min-width: 480px) {
+    min-height: 860px;
+    border-radius: $radius-xl;
+    border: 2px solid $color-crimson;
+  }
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  background-color: $color-black;
+  color: $color-cream;
+  border-bottom: 3px solid $color-crimson;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+
+  &__user-btn {
+    min-height: 38px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: $color-crimson;
+    border: none;
+    padding: 7px 14px;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 700;
+    color: $color-cream;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-crimson-dark;
+    }
+  }
+}
+
+.app-content {
+  flex: 1;
+  padding: 20px;
+  padding-bottom: 112px;
+}

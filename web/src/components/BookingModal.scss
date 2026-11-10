@@ -1,0 +1,316 @@
+@use '../styles/variables' as *;
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 14, 12, 0.78);
+  backdrop-filter: blur(5px);
+  z-index: 200;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  @media (min-width: 481px) {
+    align-items: center;
+    padding: 16px;
+  }
+}
+
+.booking-modal {
+  width: 100%;
+  max-width: 440px;
+  max-height: 90vh;
+  background-color: $color-cream;
+  border-radius: 26px 26px 0 0;
+  border-top: 4px solid $color-crimson;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.45);
+
+  @media (min-width: 481px) {
+    border-radius: 24px;
+  }
+
+  &__header {
+    padding: 18px 20px;
+    background-color: $color-black;
+    color: $color-cream;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: $color-sand;
+      font-weight: 700;
+    }
+
+    h3 {
+      font-size: 18px;
+      color: $color-cream;
+      margin-top: 2px;
+    }
+  }
+
+  &__close {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: $color-cream;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  &__form {
+    padding: 18px 20px 24px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  &__success {
+    padding: 28px 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+
+    h4 {
+      font-size: 20px;
+      color: $color-black;
+    }
+
+    p {
+      font-size: 13px;
+      color: $color-charcoal;
+      line-height: 1.5;
+    }
+  }
+
+  &__whatsapp-btn {
+    margin-top: 8px;
+    width: 100%;
+    padding: 14px 18px;
+    border-radius: $radius-md;
+    background-color: $color-olive;
+    color: $color-cream;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  &__done-btn {
+    width: 100%;
+    padding: 11px;
+    background: transparent;
+    border: 1px solid $color-sand;
+    border-radius: $radius-md;
+    color: $color-charcoal;
+    font-weight: 600;
+    cursor: pointer;
+  }
+}
+
+.booking-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: $color-charcoal;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: $radius-md;
+    border: 1px solid $color-sand;
+    background-color: $color-cream-soft;
+    color: $color-black;
+    font-size: 13px;
+    font-family: $font-sans;
+    outline: none;
+
+    &:focus {
+      border-color: $color-crimson;
+    }
+  }
+}
+
+.booking-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.booking-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  background-color: $color-cream-soft;
+  border: 1px solid $color-sand;
+  border-radius: $radius-md;
+  cursor: pointer;
+
+  input {
+    margin-top: 3px;
+    accent-color: $color-crimson;
+    width: 16px;
+    height: 16px;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    strong {
+      font-size: 12px;
+      color: $color-black;
+    }
+
+    span {
+      font-size: 11px;
+      color: $color-muted;
+    }
+  }
+
+  > span {
+    font-size: 12px;
+    font-weight: 600;
+    color: $color-charcoal;
+  }
+}
+
+.slots-info {
+  font-size: 12px;
+  color: $color-muted;
+  padding: 8px 0;
+}
+
+.slots-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.slot-btn {
+  padding: 9px 6px;
+  border-radius: 10px;
+  border: 1px solid $color-sand;
+  background-color: $color-cream-soft;
+  color: $color-black;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+
+  &:hover:not(:disabled) {
+    border-color: $color-crimson;
+  }
+
+  &--selected {
+    background-color: $color-crimson;
+    color: $color-cream;
+    border-color: $color-crimson;
+  }
+
+  &:disabled {
+    opacity: 0.35;
+    text-decoration: line-through;
+    cursor: not-allowed;
+  }
+}
+
+.booking-rules {
+  display: flex;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: $radius-md;
+  background-color: $color-crimson-bg;
+  color: $color-crimson-dark;
+  font-size: 11px;
+  line-height: 1.45;
+
+  svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+}
+
+.booking-summary {
+  background-color: $color-black;
+  color: $color-cream;
+  padding: 14px 16px;
+  border-radius: $radius-md;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    span {
+      font-size: 10px;
+      color: $color-sand;
+      text-transform: uppercase;
+    }
+
+    strong {
+      font-size: 16px;
+      font-family: $font-display;
+      color: $color-cream;
+
+      &.highlight {
+        color: #fca5a5;
+      }
+    }
+  }
+}
+
+.booking-submit {
+  width: 100%;
+  min-height: 48px;
+  padding: 14px;
+  border: none;
+  border-radius: $radius-md;
+  background-color: $color-crimson;
+  color: $color-cream;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+
+  &:hover:not(:disabled) {
+    background-color: $color-crimson-dark;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

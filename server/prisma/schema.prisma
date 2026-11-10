@@ -1,0 +1,92 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String        @id @default(cuid())
+  name         String
+  email        String        @unique
+  phone        String
+  passwordHash String
+  role         String        @default("CLIENT") // "CLIENT" ou "ADMIN"
+  createdAt    DateTime      @default(now())
+  appointments Appointment[]
+}
+
+model Category {
+  id       String    @id @default(cuid())
+  name     String
+  slug     String    @unique
+  order    Int       @default(0)
+  services Service[]
+}
+
+model Service {
+  id           String        @id @default(cuid())
+  title        String
+  description  String
+  basePrice    Float
+  durationMin  Int
+  imageUrl     String
+  active       Boolean       @default(true)
+  categoryId   String
+  category     Category      @relation(fields: [categoryId], references: [id])
+  appointments Appointment[]
+}
+
+model Appointment {
+  id              String   @id @default(cuid())
+  date            String   // "YYYY-MM-DD"
+  startTime       String   // "HH:mm"
+  endTime         String   // "HH:mm"
+
+  // Motor Anti-Conflito em minutos (Ex: 09:00 = 540)
+  startMinutes    Int
+  endMinutes      Int
+  totalDuration   Int
+
+  // Regra do Blowout (+ R$ 40,00 e + 30 min de preparo)
+  includeBlowout  Boolean  @default(false)
+  blowoutPrice    Float    @default(0)
+
+  braidLength     String   @default("Cintura")
+  jumboColor      String   @default("Preto Natural (1B)")
+  clientNotes     String?
+
+  // Regra Financeira (Sinal de 50% para reserva)
+  totalPrice      Float
+  depositAmount   Float
+
+  acceptedRules   Boolean  @default(true)
+
+  // "WHATSAPP_REQUEST" (Aguarde Confirmação) ou "MERCADO_PAGO" (Confirmado)
+  paymentMethod   String   @default("WHATSAPP_REQUEST")
+  // "PENDING_APPROVAL" | "CONFIRMED" | "CANCELLED"
+  status          String   @default("PENDING_APPROVAL")
+  mpPaymentId     String?
+
+  createdAt       DateTime @default(now())
+
+  userId          String
+  user            User     @relation(fields: [userId], references: [id])
+  serviceId       String
+  service         Service  @relation(fields: [serviceId], references: [id])
+
+  @@index([date, status])
+}
+
+model ScheduleBlock {
+  id           String   @id @default(uuid())
+  date         String
+  startTime    String
+  endTime      String
+  startMinutes Int
+  endMinutes   Int
+  reason       String
+  createdAt    DateTime @default(now())
+}

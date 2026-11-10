@@ -1,0 +1,36 @@
+// Estilo da grade de horários da tela "Novo Agendamento Manual" (admin).
+// Fica em arquivo separado para você não precisar editar o AppointmentsView.scss.
+
+// Grade com 4 colunas de tamanhos iguais, igual à grade da cliente
+.admin-slots-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+// Botão de cada horário
+.admin-slot-btn {
+  padding: 10px 0;
+  border-radius: 10px;
+  border: 1px solid #e0dcc8;
+  background: #fff;
+  color: #0f0e0c;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+
+  // Horário ocupado, bloqueado ou que já passou hoje: apagado e riscado
+  &:disabled {
+    opacity: 0.45;
+    text-decoration: line-through;
+    cursor: not-allowed;
+  }
+
+  // Horário escolhido: usa o vinho do botão "Criar Agendamento Manual"
+  &--selected {
+    background: #9e1b20;
+    border-color: #9e1b20;
+    color: #fff;
+  }
+}
